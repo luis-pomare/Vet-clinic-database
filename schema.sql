@@ -21,3 +21,10 @@ ADD PRIMARY KEY(id);
 -- Add species column
 ALTER TABLE animals
 ADD species VARCHAR(150);
+
+-- Add owners table
+CREATE TABLE owners(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(150),
+    age INT
+);
