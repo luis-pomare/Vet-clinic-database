@@ -41,3 +41,22 @@ SET weight_kg = -1*weight_kg
 WHERE weight_kg < 0;
 COMMIT;
 
+-- Answer analitycal questions
+SELECT COUNT(*) FROM animals;
+
+SELECT COUNT(*) FROM animals
+WHERE escape_attempts = 0;
+
+SELECT AVG(weight_kg) FROM animals;
+
+SELECT SUM(escape_attempts), neutered FROM animals
+GROUP BY neutered; 
+
+SELECT MAX(weight_kg), MIN(weight_kg), species
+FROM animals
+GROUP BY species;
+
+SELECT AVG(escape_attempts), species
+FROM animals
+WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP by species;
