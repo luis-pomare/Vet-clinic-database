@@ -17,3 +17,7 @@ ALTER TABLE animals ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 -- Add id column as primary key
 ALTER TABLE animals
 ADD PRIMARY KEY(id);
+
+-- Add species column
+ALTER TABLE animals
+ADD species VARCHAR(150);
