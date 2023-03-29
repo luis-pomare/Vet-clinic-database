@@ -34,3 +34,17 @@ CREATE TABLE species(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(150)
 );
+
+--Modify animals table
+ALTER TABLE animals
+DROP COLUMN  species;
+
+ALTER TABLE animals
+ADD species_id INT;
+
+ALTER TABLE animals 
+ADD FOREIGN KEY (species_id) REFERENCES species(id);
+
+ALTER TABLE animals
+ADD owner_id INT,
+ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
