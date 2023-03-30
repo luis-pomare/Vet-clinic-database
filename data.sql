@@ -38,3 +38,14 @@ VALUES
 ('Pokemon'),
 ('Digimon');
 COMMIT;
+
+-- Modify the animals table so it includes the species_id values
+BEGIN;
+UPDATE animals
+SET species_id = 2
+WHERE name LIKE '%mon%';
+
+UPDATE animals
+SET species_id = 1
+WHERE name NOT LIKE '%mon%';
+COMMIT;
