@@ -30,3 +30,11 @@ VALUES
 ('Dian Winchester', 14),
 ('Jodie Whittaker', 38);
 COMMIT;
+
+-- Insert the species data into the species table
+BEGIN;
+INSERT INTO species(name)
+VALUES
+('Pokemon'),
+('Digimon');
+COMMIT;
