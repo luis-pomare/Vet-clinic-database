@@ -1,6 +1,6 @@
 /*Queries that provide answers to the questions from all projects.*/
 
-SELECT * FROM animals WHERE name LIKE '%mon%';
+SELECT * FROM animals WHERE name LIKE '%mon';
 SELECT name FROM animals WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 SELECT name FROM animals WHERE neutered = 'true' and escape_attempts<3;
 SELECT date_of_birth FROM animals WHERE name = 'Pikachu' OR name = 'Agumon';
@@ -18,7 +18,7 @@ ROLLBACK;
 BEGIN;
 UPDATE animals
 SET species = 'digimon'
-WHERE name LIKE '%mon%';
+WHERE name LIKE '%mon';
 
 UPDATE animals
 SET species = 'pokemon'
