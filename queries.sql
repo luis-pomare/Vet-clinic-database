@@ -81,10 +81,10 @@ FROM animals JOIN species
 ON species_id = species.id 
 GROUP BY species.id;
 
-SELECT owners.id, owners.full_name, animals.id, animals.name, animals.owner_id
+SELECT owners.id, owners.full_name, animals.id, animals.name, animals.owner_id, animals.species_id
 FROM owners LEFT JOIN animals
 ON owners.id = animals.owner_id
-WHERE owners.full_name = 'Jennifer Orwell';
+WHERE owners.full_name = 'Jennifer Orwell' AND animals.species_id = 2;
 
 SELECT owners.id, owners.full_name, animals.id, animals.name, animals.owner_id
 FROM owners LEFT JOIN animals
