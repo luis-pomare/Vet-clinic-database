@@ -62,3 +62,10 @@ CREATE TABLE specializations(
     specie_id INT,
     vet_id INT
 );
+
+-- Create visits
+CREATE TABLE visits(
+    animal_id INT,
+    vet_id INT,
+    visit_date DATE
+);
