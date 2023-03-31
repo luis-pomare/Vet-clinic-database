@@ -75,3 +75,11 @@ VALUES
 ('Maisy Smith', 26, '2019-01-17'),
 ('Stephanie Mendez', 64, '1981-05-04'),
 ('Jack Harkness', 38, '2008-06-8');
+
+-- Populated the `specializations` table
+INSERT INTO specializations(vet_id, specie_id)
+VALUES
+(1, 1),
+(3, 1),
+(3, 2),
+(4, 2);
