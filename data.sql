@@ -47,7 +47,7 @@ WHERE name LIKE '%mon%';
 
 UPDATE animals
 SET species_id = 1
-WHERE name NOT LIKE '%mon%';
+WHERE species_id IS NULL;
 COMMIT;
 
 -- Modify the animals table to include the owner_id value
