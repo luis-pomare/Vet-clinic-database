@@ -76,7 +76,7 @@ VALUES
 ('Stephanie Mendez', 64, '1981-05-04'),
 ('Jack Harkness', 38, '2008-06-8');
 
--- Populated the `specializations` table
+-- Populated the specializations table
 INSERT INTO specializations(vet_id, specie_id)
 VALUES
 (1, 1),
