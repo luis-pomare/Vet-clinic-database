@@ -96,3 +96,10 @@ FROM animals JOIN owners
 ON owner_id = owners.id
 GROUP BY full_name, owner_id
 ORDER BY COUNT(owner_id) DESC LIMIT 1;
+
+-- Junction tables questions
+SELECT * FROM
+animals JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id;
