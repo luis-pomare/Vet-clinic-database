@@ -97,9 +97,58 @@ ON owner_id = owners.id
 GROUP BY full_name, owner_id
 ORDER BY COUNT(owner_id) DESC LIMIT 1;
 
--- Junction tables questions
-SELECT * FROM
+-- Answer junction tables questions
+SELECT animal_id, animals.name, visit_date, vet_id, vets.name FROM
 animals JOIN visits
 ON animals.id = visits.animal_id
 JOIN vets
-ON visits.vet_id = vets.id;
+ON visits.vet_id = vets.id
+WHERE vets.name = 'William Tatcher'
+ORDER BY visit_date DESC LIMIT 1;
+
+SELECT vet_id, vets.name, animal_id, animals.name, visit_date FROM
+animals JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez';
+
+SELECT vets.id, vets.name AS veterinarian, specie_id, species.name FROM
+vets LEFT JOIN specializations
+ON vets.id = specializations.vet_id
+LEFT JOIN species
+ON specializations.specie_id = species.id;
+
+SELECT animal_id, animals.name, visit_date, vet_id, vets.name FROM
+animals JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez'
+AND visit_date BETWEEN '2020-04-30' and '2020-08-30'
+ORDER BY visit_date;
+
+SELECT animals.id, animals.name
+FROM animals JOIN visits
+ON animals.id = visits.animal_id;
+
+SELECT animals.name, COUNT(*) AS vet_visits
+FROM animals JOIN visits
+ON animals.id = visits.animal_id
+GROUP BY animals.name
+ORDER BY vet_visits DESC LIMIT 1;
+
+SELECT vets.name AS vet, animals.name AS patient, visit_date FROM 
+animals JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith'
+ORDER BY visit_date LIMIT 1;
+
+SELECT animals.*, vets.*, visits.visit_date FROM 
+animals JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id
+ORDER BY visit_date DESC LIMIT 1;
