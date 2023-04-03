@@ -171,12 +171,3 @@ ORDER BY COUNT(animals.id) DESC LIMIT 1;
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
 EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
 EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
-
--- To improve the performance of first query.
-CREATE INDEX animal_id_asc ON visits(animal_id ASC);
-
--- To improve the performance of second query.
-CREATE INDEX vet_id_index ON visits(vet_id ASC);
-
--- To improve the performance of third query.
-CREATE INDEX email_asc ON owners(email ASC);

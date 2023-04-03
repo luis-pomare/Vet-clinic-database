@@ -76,3 +76,12 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 -- Add id column to visits table to improve performance
 ALTER TABLE visits
 ADD COLUMN id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY;
+
+-- To improve the performance of first query.
+CREATE INDEX animal_id_asc ON visits(animal_id ASC);
+
+-- To improve the performance of second query.
+CREATE INDEX vet_id_index ON visits(vet_id ASC);
+
+-- To improve the performance of third query.
+CREATE INDEX email_asc ON owners(email ASC);
