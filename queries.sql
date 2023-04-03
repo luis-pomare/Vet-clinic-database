@@ -178,5 +178,5 @@ CREATE INDEX animal_id_asc ON visits(animal_id ASC);
 -- To improve the performance of second query.
 CREATE INDEX vet_id_index ON visits(vet_id ASC);
 
--- To improve the performance of second query.
+-- To improve the performance of third query.
 CREATE INDEX email_asc ON owners(email ASC);
