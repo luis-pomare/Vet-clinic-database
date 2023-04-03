@@ -72,3 +72,7 @@ CREATE TABLE visits(
 
 -- Add an email column to owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Add id column to visits table to improve performance
+ALTER TABLE visits
+ADD COLUMN id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY;
