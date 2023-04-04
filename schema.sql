@@ -69,3 +69,19 @@ CREATE TABLE visits(
     vet_id INT,
     visit_date DATE
 );
+
+-- Add an email column to owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Add id column to visits table to improve performance
+ALTER TABLE visits
+ADD COLUMN id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY;
+
+-- To improve the performance of first query.
+CREATE INDEX animal_id_asc ON visits(animal_id ASC);
+
+-- To improve the performance of second query.
+CREATE INDEX to_vet_2 ON visits(vet_id) WHERE vet_id = 2;
+
+-- To improve the performance of third query.
+CREATE INDEX email_asc ON owners(email ASC);
